@@ -2,7 +2,14 @@ services:
   - type: web
     name: keycloak-server
     runtime: docker
-
     plan: starter
-
+    region: oregon
+    healthCheckPath: /health/ready
     autoDeploy: true
+    envVars:
+      - key: KC_DB
+        value: postgres
+      - key: KC_HTTP_ENABLED
+        value: "true"
+      - key: KC_PROXY_HEADERS
+        value: xforwarded
