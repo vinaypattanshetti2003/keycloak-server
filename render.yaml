@@ -6,19 +6,3 @@ services:
     plan: starter
 
     autoDeploy: true
-
-    healthCheckPath: /
-
-    envVars:
-
-      - key: KC_DB
-        value: postgres
-
-      - key: KC_PROXY_HEADERS
-        value: xforwarded
-
-      - key: KC_HTTP_ENABLED
-        value: "true"
-
-      - key: KC_HOSTNAME_STRICT
-        value: "false"
